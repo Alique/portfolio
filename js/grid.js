@@ -453,7 +453,6 @@ var Grid = (function() {
 
 		},
 		calcHeight : function() {
-			//var clientHeight = document.getElementById('myDiv').clientHeight;
 
 			var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
 				itemHeight = winsize.height;
@@ -478,8 +477,8 @@ var Grid = (function() {
 				};
 
 			this.calcHeight();
-			this.$previewEl.css( 'height', '600px'/*this.height*/ );
-			this.$item.css( 'height', '600px'/*this.itemHeight*/ ).on( transEndEventName, onEndFn );
+			this.$previewEl.css( 'height', this.height );
+			this.$item.css( 'height', this.itemHeight ).on( transEndEventName, onEndFn );
 
 			if( !support ) {
 				onEndFn.call();
